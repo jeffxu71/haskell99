@@ -56,8 +56,6 @@ myReverse (a : as) = myReverse(as) ++ [a]
 isPalindrome :: (Eq a) => [a] -> Bool
 isPalindrome [] = True
 isPalindrome [_] = True
-isPalindrome [a, b] = if (a == b) then True else False
-isPalindrome [a, _, b] = isPalindrome [a,b]
 isPalindrome (a : as) | a == (last as) = isPalindrome (init as)
                       | otherwise = False
 ```
