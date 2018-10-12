@@ -53,7 +53,7 @@ myReverse (a : as) = myReverse(as) ++ [a]
 #### Q6: Find out whether a list is a palindrome. A palindrome can be read forward or backward; e.g. (x a m a x).
 
 ```haskell
-isPalindrome :: forall a. [a] -> Bool -- not working yet!
+isPalindrome :: (Eq a) => [a] -> Bool
 isPalindrome [] = True
 isPalindrome [_] = True
 isPalindrome [a, b] = if (a == b) then True else False
