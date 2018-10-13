@@ -183,6 +183,10 @@ range m n = if (m == n) then
 ```haskell
 ```
 
+#### Q26: Generate the combinations of K distinct objects chosen from the N elements of a list
+
+```haskell
+```
 
 
 
