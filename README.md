@@ -62,6 +62,9 @@ isPalindrome (a : as) | a == (last as) = isPalindrome (init as)
 
 #### Q7: Flatten a nested list structure.Transform a list, possibly holding lists as elements into a 'flat' list by replacing each list with its elements (recursively).
 
+···haskell
+···
+
 #### Q8: Eliminate consecutive duplicates of list elements.
 
 ```haskell
@@ -79,6 +82,14 @@ compress (a : as) = if (a == head as) then compress as else a : compress as
 
 ```haskell
 ```
+
+#### Q14: Duplicate the elements of a list.
+
+···haskell
+dupli :: [a] -> [a]
+dupli [] = []
+dupli (a: as) = a : a : dupli(as)
+···
 
 ## Q31-41 Arithmetic
 
