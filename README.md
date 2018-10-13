@@ -138,7 +138,6 @@ slice (a : as) m n = slice as (m-1) (n-1)
 
 ```haskell
 rotate :: [a] -> Int -> [a]
-rotate as 0 = as
 rotate as n = if (n == 0) then
         as
     else if (n > 0) then
