@@ -145,6 +145,48 @@ rotate as n = if (n == 0) then
         rotate ([last as] ++ (init as)) (n+1)
 ```
 
+#### Q20: Remove the K'th element from a list.
+
+```haskell
+removeAtElement :: [a] -> Int -> a
+removeAtElement (a : as) 1 = a
+removeAtElement (a : as) n = removeAtElement as (n-1)
+
+removeAtResidue :: [a] -> Int -> [a]
+removeAtResidue (a : as) 1 = as
+removeAtResidue (a : as) n = [a] ++ (removeAtResidue as (n-1))
+
+removeAt :: Int -> [a] -> (a, [a])
+removeAt n as = ((removeAtElement as n), (removeAtResidue as n))
+```
+
+#### Q21: Insert an element at a given position into a list.
+
+```haskell
+insertAt :: a -> [a] -> Int -> [a]
+insertAt a as 1 = a : as
+insertAt a as n = [head as] ++ (insertAt a (tail as) (n-1))
+```
+
+#### Q22: Create a list containing all integers within a given range.
+
+```haskell
+range :: Int -> Int -> [Int]
+range m n = if (m == n) then
+        [m]
+    else
+        [m] ++ (range (m+1) n)
+```
+
+#### Q23: Extract a given number of randomly selected elements from a list.
+
+```haskell
+```
+
+
+
+
+
 
 ## Q31-41 Arithmetic
 
