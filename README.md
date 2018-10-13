@@ -85,11 +85,23 @@ compress (a : as) = if (a == head as) then compress as else a : compress as
 
 #### Q14: Duplicate the elements of a list.
 
-···haskell
+```haskell
 dupli :: [a] -> [a]
-dupli [] = []
-dupli (a: as) = a : a : dupli(as)
-···
+dupli [a] = [a, a]
+dupli (a: as) = [a, a] ++ dupli(as)
+```
+
+#### Q15: Replicate the elements of a list a given number of times.
+
+```haskell
+dupli :: a -> Int -> [a]
+dupli a 1 = [a]
+dupli a n = a : (dupli a (n-1))
+
+repli :: [a] -> Int -> [a]
+repli [] n = []
+repli (a : as) n = (dupli a n) ++ (repli as n)
+```
 
 ## Q31-41 Arithmetic
 
