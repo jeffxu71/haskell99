@@ -128,7 +128,6 @@ first [] n = []
 first as 0 = []
 first (a : as) n = [a] ++ (first as (n-1))
 
-
 slice :: [a] -> Int -> Int -> [a]
 slice as 1 n = first as n
 slice (a : as) m n = slice as (m-1) (n-1)
