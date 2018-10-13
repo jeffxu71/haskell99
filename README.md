@@ -103,6 +103,51 @@ repli [] n = []
 repli (a : as) n = (dupli a n) ++ (repli as n)
 ```
 
+#### Q16: Drop every N'th element from a list.
+
+```haskell
+dropEvery :: [a] -> Int -> [a]
+dropEvery as n = if (length as > n) then
+        (take (n-1) as) ++ (dropEvery (drop n as) n)
+    else if (length as == n) then
+        init as
+    else
+        as
+```
+
+#### Q17: Split a list into two parts; the length of the first part is given.
+
+```haskell
+```
+
+#### Q18:  Extract a slice from a list.
+
+```haskell
+first :: [a] -> Int -> [a]
+first [] n = []
+first as 0 = []
+first (a : as) n = [a] ++ (first as (n-1))
+
+
+slice :: [a] -> Int -> Int -> [a]
+slice as 1 n = first as n
+slice (a : as) m n = slice as (m-1) (n-1)
+```
+
+#### Q19: Rotate a list N places to the left.
+
+```haskell
+rotate :: [a] -> Int -> [a]
+rotate as 0 = as
+rotate as n = if (n == 0) then
+        as
+    else if (n > 0) then
+        rotate ((tail as) ++ [head as]) (n-1)
+    else -- n < 0
+        rotate ([last as] ++ (init as)) (n+1)
+```
+
+
 ## Q31-41 Arithmetic
 
 ## Q46-50 Logic and codes
