@@ -62,8 +62,8 @@ isPalindrome (a : as) | a == (last as) = isPalindrome (init as)
 
 #### Q7: Flatten a nested list structure.Transform a list, possibly holding lists as elements into a 'flat' list by replacing each list with its elements (recursively).
 
-···haskell
-···
+```haskell
+```
 
 #### Q8: Eliminate consecutive duplicates of list elements.
 
