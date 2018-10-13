@@ -60,6 +60,26 @@ isPalindrome (a : as) | a == (last as) = isPalindrome (init as)
                       | otherwise = False
 ```
 
+#### Q7: Flatten a nested list structure.Transform a list, possibly holding lists as elements into a 'flat' list by replacing each list with its elements (recursively).
+
+#### Q8: Eliminate consecutive duplicates of list elements.
+
+```haskell
+compress :: (Eq a) => [a] -> [a]
+compress [a,b] = if (a == b) then [b] else [a,b]
+compress (a : as) = if (a == head as) then compress as else a : compress as
+```
+
+#### Q9: Pack consecutive duplicates of list elements into sublists. If a list contains repeated elements they should be placed in separate sublists.
+
+```haskell
+```
+
+#### Q10: Run-length encoding of a list. Use the result of problem P09 to implement the so-called run-length encoding data compression method. Consecutive duplicates of elements are encoded as lists (N E) where N is the number of duplicates of the element E.
+
+```haskell
+```
+
 ## Q31-41 Arithmetic
 
 ## Q46-50 Logic and codes
