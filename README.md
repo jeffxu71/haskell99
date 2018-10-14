@@ -203,3 +203,33 @@ range m n = if (m == n) then
 ## Q80-89 Graphs
 
 ## Q90-99 Misc. problems
+
+#### Q96: Syntax checker
+
+```haskell
+isDigit :: Char -> Bool
+isDigit c = (c >= '0') && (c <= '9')
+
+isLetter :: Char -> Bool
+isLetter c = ((c >= 'a') && (c <= 'z')) || ((c >= 'A') && (c <= 'Z'))
+
+isHyphen :: Char -> Bool
+isHyphen c = c == '-'
+
+identifier :: String -> Bool
+identifier str = case str of [] -> False
+                             [a] -> isLetter(a)
+                             [a,b] -> isLetter(a) && isLetter(b)
+                             (a : b : xs) -> if ((isLetter(a) && isLetter(b)) ||
+                                 (isLetter(a) && isHyphen(b)) ||
+                                 (isHyphen(a) && isLetter(b)) ||
+                                 (isHyphen(a) && isDigit(b)) ||
+                                 (isDigit(a) && isHyphen(b)) ||
+                                 (isDigit(a) && isLetter(b))) then
+                                     identifier (tail str)
+                                 else
+                                     False
+```
+
+
+
