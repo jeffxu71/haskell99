@@ -196,7 +196,9 @@ range m n = if (m == n) then
 
 ## Q46-50 Logic and codes
 
-## Q54A-69 Binary trees
+## Q55-69 Binary trees
+
+#### Q55: Construct completely balanced binary trees
 
 ## Q70B-73 Multiway trees
 
